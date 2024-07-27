@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reviews Results</title>
+    <!-- Add some basic styling -->
+    <style>
+        .download-btn {
+            background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            padding: 5px 10px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 5px;
+            height: 40px;
+        }
+        .download-btn img {
+            vertical-align: middle;
+            width: 20px; /* Adjust icon size */
+            height: 20px; /* Adjust icon size */
+        }
+    </style>
+</head>
+<body>
+    <h1>Reviews Results</h1>
+    <!-- Display your reviews here -->
+    {% for review in reviews %}
+        <div>
+            <strong>Customer Name:</strong> {{ review.name }}<br>
+            <strong>Review Date:</strong> {{ review.date }}<br>
+            <strong>Rating:</strong> {{ review.rating }}<br>
+            <strong>Review Text:</strong> {{ review.review_text }}<br>
+            <hr>
+        </div>
+    {% endfor %}
+    
+    <!-- Include the download button -->
+    <a href="/download_csv" class="download-btn">
+        <img src="path_to_csv_icon.png" alt="Download CSV">
+    </a>
+</body>
+</html>

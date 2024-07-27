@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon Reviews</title>
+    <!-- Add some basic styling -->
+    <style>
+        .download-btn {
+            background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .download-btn img {
+            vertical-align: middle;
+            width: 20px; /* Adjust icon size */
+            height: 20px; /* Adjust icon size */
+        }
+        body{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Amazon Reviews Scraper</h1>
+    <form action="/fetch_reviews" method="post">
+        <input type="text" name="url" placeholder="Enter the URL" required>
+        <button type="submit">Fetch Reviews</button>
+    </form>
+    
+    <!-- Include the download button -->
+    <a href="/download_csv" class="download-btn">
+        <img src="https://www.shutterstock.com/image-vector/download-icon-vector-illustration-on-600nw-1724759407.jpg"> Download CSV
+    </a>
+</body>
+</html>
