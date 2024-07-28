@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, send_file
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -21,7 +22,9 @@ def fetch_reviews():
     
     # Set up WebDriver (Ensure you provide the correct path to the ChromeDriver)
 
-    driver = webdriver.Chrome()
+    #driver = webdriver.Chrome()
+    driver_service = Service(ChromeDriverManager().install())
+    driver = webdriver.Chrome(service=driver_service)
     
     try:
         # Open the URL
